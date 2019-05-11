@@ -1,0 +1,45 @@
+.title  {
+    text-align: center;
+    padding-top: 10px;
+}
+#cartAlert {
+    font-size: 30%;
+}
+#cartButton {
+    text-align: center;
+}
+#cartTable {
+    font-family: arial, sans-serif;
+    width: 100%;
+    font-size: 30%;
+    }
+.table {
+    font-family: arial, sans-serif;
+    width: 100%;
+}
+.table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+.table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.card-img-top {
+    width: 70%;
+    object-fit: fill;
+}
+
+.product-quantity {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: #E0E0E0 1px solid;
+}
+
+.dashboard {
+    text-align: center;
+}
