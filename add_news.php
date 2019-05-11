@@ -27,13 +27,12 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
             move_uploaded_file($file_tmp, $localPath);
             $query = "INSERT INTO news(news_title, news_body, news_image_dir) VALUES('$title', '$body', '$localPath')";
             if (mysqli_query($conn, $query)) {
-                $_SESSION['message'] = "New post added successfully";
+                $_SESSION['message'] = "News added successfully";
                 header("location: manage_news.php");
                 exit();
             } else {
                 $_SESSION['message'] = "Error: ". mysqli_error($conn);
-                exit();
-                
+                exit();   
             }
         }
     }

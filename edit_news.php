@@ -40,7 +40,7 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
             move_uploaded_file($file_tmp, $localPath);
             $updateQuery = "UPDATE news SET news_title = '$title', news_body = '$body', news_image_dir = '$localPath' WHERE news_id =".$id;
             if (mysqli_query($conn, $updateQuery)) {
-                $_SESSION['message'] = "New post edited successfully";
+                $_SESSION['message'] = "News edited successfully";
                 header('location: manage_news.php');
                 exit();
             } else {
