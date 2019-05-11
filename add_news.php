@@ -1,5 +1,6 @@
 <?php require("config/Database.php"); ?>
 <?php
+session_start();
 if (isset($_POST["submit"]) && isset($_FILES['image'])) {
         $title = mysqli_real_escape_string($conn, $_POST["title"]);
         $body = mysqli_real_escape_string($conn, $_POST["body"]);
@@ -27,8 +28,12 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
             $query = "INSERT INTO news(news_title, news_body, news_image_dir) VALUES('$title', '$body', '$localPath')";
             if (mysqli_query($conn, $query)) {
                 $_SESSION['message'] = "New post added successfully";
+                header("location: manage_news.php");
+                exit();
             } else {
                 $_SESSION['message'] = "Error: ". mysqli_error($conn);
+                exit();
+                
             }
         }
     }

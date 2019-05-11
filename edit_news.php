@@ -1,6 +1,6 @@
 <?php require("config/Database.php"); ?>
 <?php
-// Show code error (if any)
+session_start();
 // Get id
 $id = mysqli_real_escape_string($conn, $_GET["id"]);
     
@@ -41,9 +41,11 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
             $updateQuery = "UPDATE news SET news_title = '$title', news_body = '$body', news_image_dir = '$localPath' WHERE news_id =".$id;
             if (mysqli_query($conn, $updateQuery)) {
                 $_SESSION['message'] = "New post edited successfully";
-                header('location: edit_news.php');
+                header('location: manage_news.php');
+                exit();
             } else {
                 $_SESSION['message'] = "Error: ". mysqli_error($conn);
+                exit();
             }
         }
     }

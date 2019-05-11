@@ -44,9 +44,9 @@ include('inc/header.php');
 								?>
 								<tr>
 									<td>
-									<a href="delete_item.php?id=<?php echo $row['product_id']; ?>&index=<?php echo $index; ?>">
-											<i class="fas fa-trash" ></i>
-									</a>	
+										<a href="delete_item.php?id=<?php echo $row['product_id']; ?>&index=<?php echo $index; ?>">
+												<i class="fas fa-trash" ></i>
+										</a>	
 									</td>
 									<td><?php echo $row['product_name']; ?></td>
 									<td><?php echo number_format($row['product_price'], 2); ?></td>
@@ -87,7 +87,7 @@ include('inc/header.php');
 </div>
 <script>
 	// Prevent user input on quantity field, use up and down button only
-	$("[type='number']").keypress(function (evt) {
+	$("[type='number']").onkeydown(function (evt) {
     evt.preventDefault();
 });
 </script>

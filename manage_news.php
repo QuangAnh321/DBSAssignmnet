@@ -16,7 +16,9 @@
     if(isset($_POST["submit"])) {
         $deleteQuery = "DELETE FROM news WHERE news_id=".$_POST["id"];
         mysqli_query($conn, $deleteQuery);
+        $_SESSION['message'] =  "News deleted successfully";
         header("Location: manage_news.php");
+        die();
     }
 ?>
 
