@@ -51,7 +51,7 @@ include('inc/header.php');
 									<td><?php echo $row['product_name']; ?></td>
 									<td><?php echo number_format($row['product_price'], 2); ?></td>
 									<input type="hidden" name="indexes[]" value="<?php echo $index; ?>">
-									<td><input type="number" class="form-control" value="<?php echo $_SESSION['qty_array'][$index]; ?>" name="qty_<?php echo $index; ?>" min="1" max="4"></td>
+									<td><input type="number" class="form-control" value="<?php echo $_SESSION['qty_array'][$index]; ?>" name="qty_<?php echo $index; ?>" min="1" max="4" onkeypress="return false;"></td>
 									<td><?php echo number_format($_SESSION['qty_array'][$index] * $row['product_price'], 2); ?></td>
 									<?php $total += $_SESSION['qty_array'][$index] * $row['product_price']; ?>
 								</tr>
@@ -85,10 +85,4 @@ include('inc/header.php');
 </div>
 </div>
 </div>
-<script>
-	// Prevent user input on quantity field, use up and down button only
-	$("[type='number']").onkeydown(function (evt) {
-    evt.preventDefault();
-});
-</script>
 <?php include('inc/footer.php'); ?>

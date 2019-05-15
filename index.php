@@ -44,4 +44,5 @@ unset($_SESSION['qty_array']);
             <?php endforeach; ?>
         </div>
     </div>
+</div>
     <?php include("inc/footer.php"); ?>

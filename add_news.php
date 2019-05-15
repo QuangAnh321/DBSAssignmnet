@@ -62,5 +62,8 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
         </form>
     </div>
     <?php include("inc/footer.php"); ?>
-    <!-- use latter 
+    <!-- External rich text editor -->
     <script src="//cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+    <script>              
+        CKEDITOR.replace( 'body' );
+    </script>
