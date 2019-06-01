@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: dbsassignment
 -- ------------------------------------------------------
--- Server version	5.7.26-0ubuntu0.18.04.1
+-- Server version	5.7.26
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -108,6 +108,12 @@ CREATE TABLE `products` (
   `image_dir` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `brand_id` int(11) DEFAULT NULL,
+  `product_inthebox` varchar(100) DEFAULT NULL,
+  `product_warranty` int(11) DEFAULT NULL,
+  `product_processor` varchar(45) DEFAULT NULL,
+  `product_dimension` varchar(45) DEFAULT NULL,
+  `product_screen` varchar(45) DEFAULT NULL,
+  `product_camera` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`product_id`),
   KEY `fk_products_1_idx` (`category_id`),
   KEY `fk_brand_idx` (`brand_id`),
@@ -122,7 +128,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Galaxy S10',NULL,18990000,'Bezeless screen, Android os','image/GalaxyS10.png','2019-05-07 17:08:23',NULL),(2,'iPhone XS',NULL,26990000,'Latest iPhone','image/iphonexs.png','2019-05-07 17:08:59',NULL),(3,'iPad Pro',NULL,21490000,'Powerfull iPad','image/ipadpro.png','2019-05-07 17:08:59',NULL),(4,'Micro USB Cable',NULL,20000,'Charging cable','image/microusbcable.jpg','2019-05-07 17:08:59',NULL);
+INSERT INTO `products` VALUES (1,'Galaxy S10',NULL,18990000,'Bezeless screen, Android os','image/GalaxyS10.png','2019-06-01 11:34:54',NULL,'Fast Charger, USB C cable, SIM tool, User manual',12,'Exynos 9820','162.5 x 74.8 x 6.2','Dynamic AMOLED, 6.1\", Quad HD+ (2K+)','12 MP'),(2,'iPhone XS',NULL,26990000,'Latest iPhone','image/iphonexs.png','2019-06-01 11:34:54',NULL,'Charger, USB C cable, SIM tool, User manual',24,'Apple A11 Bionic ','143.6 x 70.9 x 7.2','OLED, 5.8\", Super Retina','12 MP'),(3,'iPad Pro',NULL,21490000,'Powerfull iPad','image/ipadpro.png','2019-06-01 11:34:54',NULL,'Charger, USB C cable, SIM tool',12,'Apple A12X Bionic ','247 x 178 x 5.9','Liquid Retina display, 11\"','12 MP'),(4,'Micro USB Cable',NULL,20000,'Charging cable','image/microusbcable.jpg','2019-06-01 11:13:21',NULL,'User manual',6,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-15 11:55:07
+-- Dump completed on 2019-06-01 18:57:12

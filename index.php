@@ -34,7 +34,9 @@ unset($_SESSION['qty_array']);
         <div class="card-columns">
             <?php foreach ($products as $product) : ?>
                 <div class="card bg-light text-center">
-                    <img class="card-img-top" src="<?php echo $product["image_dir"]; ?>" alt="Card image cap">
+                    <a href="single_product.php?id=<?php echo $product["product_id"]; ?>">
+                        <img class="card-img-top" src="<?php echo $product["image_dir"]; ?>" alt="Card image cap">
+                    </a>
                     <h5 class="card-title"><?php echo $product["product_name"]; ?></h5>
                     <h6 class="card-title"><?php echo number_format($product["product_price"], 2) ." đ"; ?></h6>
                     <a href="add_cart.php?id=<?php echo $product["product_id"]; ?>">
