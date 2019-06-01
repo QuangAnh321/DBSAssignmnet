@@ -14,7 +14,7 @@
     $news = mysqli_fetch_assoc($result);
 
     // Free result
-    mysqli_free_result($news);
+    mysqli_free_result($result);
 
     // Close connection
     mysqli_close($conn);

@@ -12,7 +12,7 @@
     $news = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     // Free result
-    mysqli_free_result($news);
+    mysqli_free_result($result);
 
     // Close connection
     mysqli_close($conn);

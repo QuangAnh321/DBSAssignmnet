@@ -51,7 +51,7 @@ CREATE TABLE `categories` (
   `category_name` varchar(45) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +60,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'phone','2019-05-05 02:18:30');
+INSERT INTO `categories` VALUES (1,'phone','2019-05-05 02:18:30'),(3,'tablet','2019-06-01 14:31:51'),(4,'accessories','2019-06-01 14:31:51');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +128,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Galaxy S10',NULL,18990000,'Bezeless screen, Android os','image/GalaxyS10.png','2019-06-01 11:34:54',NULL,'Fast Charger, USB C cable, SIM tool, User manual',12,'Exynos 9820','162.5 x 74.8 x 6.2','Dynamic AMOLED, 6.1\", Quad HD+ (2K+)','12 MP'),(2,'iPhone XS',NULL,26990000,'Latest iPhone','image/iphonexs.png','2019-06-01 11:34:54',NULL,'Charger, USB C cable, SIM tool, User manual',24,'Apple A11 Bionic ','143.6 x 70.9 x 7.2','OLED, 5.8\", Super Retina','12 MP'),(3,'iPad Pro',NULL,21490000,'Powerfull iPad','image/ipadpro.png','2019-06-01 11:34:54',NULL,'Charger, USB C cable, SIM tool',12,'Apple A12X Bionic ','247 x 178 x 5.9','Liquid Retina display, 11\"','12 MP'),(4,'Micro USB Cable',NULL,20000,'Charging cable','image/microusbcable.jpg','2019-06-01 11:13:21',NULL,'User manual',6,NULL,NULL,NULL,NULL);
+INSERT INTO `products` VALUES (1,'Galaxy S10',1,18990000,'Bezeless screen, Android os','image/GalaxyS10.png','2019-06-01 15:05:16',NULL,'Fast Charger, USB C cable, SIM tool, User manual',12,'Exynos 9820','162.5 x 74.8 x 6.2','Dynamic AMOLED, 6.1\", Quad HD+ (2K+)','12 MP'),(2,'iPhone XS',1,26990000,'Latest iPhone','image/iphonexs.png','2019-06-01 15:05:16',NULL,'Charger, USB C cable, SIM tool, User manual',24,'Apple A11 Bionic ','143.6 x 70.9 x 7.2','OLED, 5.8\", Super Retina','12 MP'),(3,'iPad Pro',3,21490000,'Powerfull iPad','image/ipadpro.png','2019-06-01 15:05:16',NULL,'Charger, USB C cable, SIM tool',12,'Apple A12X Bionic ','247 x 178 x 5.9','Liquid Retina display, 11\"','12 MP'),(4,'Micro USB Cable',4,20000,'Charging cable','image/microusbcable.jpg','2019-06-01 15:05:16',NULL,'User manual',6,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-01 18:57:12
+-- Dump completed on 2019-06-02  0:18:38

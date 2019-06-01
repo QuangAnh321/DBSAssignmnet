@@ -1,34 +1,32 @@
+<?php require("config/Database.php"); ?>
 <?php
-session_start();
-require("config/Database.php");
-// Query statement
-$query = "SELECT * FROM products";
+    session_start();
+    $categoryID = mysqli_real_escape_string($conn, $_GET["id"]);
 
-// Get result
-$result = mysqli_query($conn, $query);
+    $categoryQuery= "SELECT category_name FROM categories WHERE category_id=".$categoryID;
+    $categoryResult = mysqli_query($conn, $categoryQuery);
+    $category = mysqli_fetch_assoc($categoryResult);
 
-// Fetch data
-$products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $productQuery = "SELECT * FROM products where category_id=".$categoryID;
+    $productResult = mysqli_query($conn, $productQuery);
+    $products = mysqli_fetch_all($productResult, MYSQLI_ASSOC);
+    
+    mysqli_free_result($categoryResult);
+    mysqli_free_result($productResult);
+    mysqli_close($conn);
+    //initialize cart if not set or is unset
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
 
-// Free result
-mysqli_free_result($result);
-
-// Close connection
-mysqli_close($conn);
-
-//initialize cart if not set or is unset
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-}
-
-//unset quantity
-unset($_SESSION['qty_array']);
+    //unset quantity
+    unset($_SESSION['qty_array']);
 ?>
-
+ 
 <?php include("inc/header.php"); ?>
 <?php include("inc/navbar.php"); ?>
 <div class="container">
-    <h1 class="title">All Products</h1>
+    <h1 class="title">All <?php echo $category["category_name"]; ?></h1>
     <?php include("info_message.php"); ?>
         <div class="card-columns">
             <?php foreach ($products as $product) : ?>

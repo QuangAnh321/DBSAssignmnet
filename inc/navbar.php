@@ -1,4 +1,10 @@
 <!-- navbar -->
+<?php
+    include("config/Database.php");
+    $query = "SELECT * FROM categories";
+    $result = mysqli_query($conn, $query);
+    $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
+?>
 <div class="container-fuild">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Phone Shop</a>
@@ -15,9 +21,9 @@
                       Category
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Phone</a>
-                        <a class="dropdown-item" href="#">Tablet</a>
-                        <a class="dropdown-item" href="#">Accesories</a>
+                    <?php foreach ($categories as $oneCategory) : ?>
+                        <a class="dropdown-item" href="single_category.php?id=<?php echo $oneCategory["category_id"]; ?>"><?php echo $oneCategory["category_name"]; ?></a>
+                        <?php endforeach; ?>
                     </div>
                 </li>
                 <li class="nav-item">

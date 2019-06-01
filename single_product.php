@@ -7,6 +7,13 @@
     $product = mysqli_fetch_assoc($result);
     mysqli_free_result($product);
     mysqli_close($conn);
+    //initialize cart if not set or is unset
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+
+    //unset quantity
+    unset($_SESSION['qty_array']);
 ?>
 <?php include("inc/header.php"); ?>
 <?php include("inc/navbar.php"); ?>
