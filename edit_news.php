@@ -1,4 +1,5 @@
 <?php require("config/Database.php"); ?>
+<?php require("check_permission.php"); ?>
 <?php
 session_start();
 // Get id

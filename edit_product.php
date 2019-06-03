@@ -1,0 +1,1 @@
+<?php require("check_permission.php"); ?>

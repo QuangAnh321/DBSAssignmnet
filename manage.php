@@ -1,4 +1,5 @@
 <?php require("config/Database.php"); ?>
+<?php require("check_permission.php"); ?>
 <?php include("inc/header.php"); ?>
 <?php include("inc/navbar.php"); ?>
 

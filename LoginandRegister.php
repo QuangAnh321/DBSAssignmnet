@@ -17,17 +17,13 @@
     $password_1 = mysqli_real_escape_string($conn, $_POST['password_1']);
     $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
 
-    // Verified in client, this is no longer needed
-    // if (empty($username)) { array_push($errors, "Username is required"); }
-    // if (empty($email)) { array_push($errors, "Email is required"); }
-    // if (empty($password_1)) { array_push($errors, "Password is required"); }
     if ($password_1 != $password_2) {
       $errors++;
       $_SESSION['message'] = "The two passwords do not match";
     }
-    if (!preg_match('/^[a-z\d]{2,64}$/i', $username) || !preg_match('/^[a-z\d]{2,64}$/i', $email) ) {
+    if (preg_match('/[^a-zA-Z0-9]/', $username)) {
       $errors++;
-      $_SESSION['message'] = "Only letters and numbers are allowed for username and email";
+      $_SESSION['message'] = "Only letters and numbers are allowed for username";
     }
 
     
@@ -54,6 +50,7 @@
             VALUES('$username', ' $email', '$password', '2')";
       mysqli_query($conn, $query);
       $_SESSION['username'] = $username;
+      $_SESSION['userRole'] = "2";
       $_SESSION['message'] = "Register successfully";
       header('location: index.php');
     }
@@ -82,6 +79,7 @@
       if (mysqli_num_rows($results) == 1) {
         $username = $user["user_name"];
         $_SESSION['username'] = $username;
+        $_SESSION['userRole'] = $user["user_role"];
         $_SESSION['message'] = "You are now logged in";
         header('location: index.php');
         die();

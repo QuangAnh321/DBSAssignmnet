@@ -29,7 +29,7 @@
             <ul style="list-style: none;">
                 <li><i class="fas fa-microchip" style="color:blue"></i> Processor: <?php echo $product["product_processor"]; ?></li>
                 <hr>
-                <li><i class="fas fa-cube" style="color:blue"></i> Dimension: <?php echo $product["product_dimension"]; ?></li>
+                <li><i class="fas fa-cube" style="color:blue"></i> Dimension (W x H x T, mm): <?php echo $product["product_dimension"]; ?></li>
                 <hr>
                 <li><i class="fas fa-mobile-alt" style="color:blue"></i> Screen: <?php echo $product["product_screen"]; ?></li>
                 <hr>

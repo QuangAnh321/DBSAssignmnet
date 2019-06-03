@@ -27,7 +27,7 @@ CREATE TABLE `brands` (
   `brand_name` varchar(45) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`brand_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `brands` (
 
 LOCK TABLES `brands` WRITE;
 /*!40000 ALTER TABLE `brands` DISABLE KEYS */;
+INSERT INTO `brands` VALUES (1,'Apple','2019-06-02 11:27:19'),(2,'Samsung','2019-06-02 11:27:19'),(3,'Others','2019-06-02 11:27:19');
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,7 +80,7 @@ CREATE TABLE `news` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`news_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +89,7 @@ CREATE TABLE `news` (
 
 LOCK TABLES `news` WRITE;
 /*!40000 ALTER TABLE `news` DISABLE KEYS */;
-INSERT INTO `news` VALUES (1,'Tháng 5, mua điện thoại Samsung Galaxy ưu đãi lớn đến 5.5 triệu','Tháng 5 là tháng của ngày Quốc tế lao động, ngày sinh của cố chủ tịch Hồ Chí Minh và cũng là thời điểm “vàng” để bạn tậu điện thoại Samsung vì hàng loạt sản phẩm của công ty Hàn Quốc đang được giảm giá mạnh, trong đó mức cao nhất lên đến 5.5 triệu đồng, đi kèm theo đó là rất nhiều khuyến mãi hấp dẫn khác.','image_news/galaxys10sale.jpg','2019-05-07 17:07:50',NULL),(2,'Google Pixel 3a lộ cấu hình chi tiết trước ngày ra mắt','Trước thời điểm trình làng tại sự kiện Google I/O 2019 thì cấu hình của Pixel 3a đã được giới thạo tin khai thác khá chi tiết.\r\nTheo Gizmochina, Google Pixel 3a sẽ có màn hình OLED kích thước 5.6 inch HD+, tỉ lệ màn hình 18:9. Màn hình này sẽ hỗ trợ tính năng Always-on Display và Always-listening, với tỉ lệ tương phản 1666677666.000:1.\r\n\r\nCung cấp sức mạnh cho máy là bộ vi xử lý tám Snapdragon 670, đi kèm 4 GB RAM và 64 GB ROM.\r\n\r\nVề phần camera, Pixel 3a sẽ có cảm biến lấy nét Dual Pixel 12.2 MP khẩu độ F/1.8 cho khả năng bắt nét tốt và chống rung quang học (OIS) và điện tử (EIS), cho góc nhìn 76 độ. Được biết, Pixel 3a sẽ có thể quay video chất lượng Full HD ở tốc độ 30, 60 hoặc 120 khung hình/ giây, video độ phân giải HD ở tốc độ 30, 60 hoặc 240 khung hình/giây và video 4K tốc độ 30 khung hình/giây.\r\n\r\nMặt trước của máy là cảm biến 8 MP khẩu độ F/2.0 với góc nhìn 84 độ, hỗ trợ quay video chất lượng Full HD, HD và 480p ở tốc độ 30 khung hình/giây.\r\n\r\nCung cấp sức mạnh cho máy là viên pin dung lượng 3.000 mAh hỗ trợ sạc nhanh công suất 18W, hỗ trợ một khe nano-SIM duy nhất, hỗ trợ eSIM ở một số thị trường, cổng cắm tai nghe 3.5 mm, Wi-Fi băng tần kép, GPS và Bluetooth 5.0, tích hợp loa âm thanh nổi, cảm biến vân tay ở mặt lưng và hỗ trợ tính năng Active Edge.\r\n\r\nNgoài ra, Pixel 3a sẽ cài sẵn hệ điều hành Android Pie 9.0, được hoàn thiện bằng chất liệu nhựa polycarbonate, trọng lượng 147 gram và kích thước 151.3 x 70.1 x 8.2 mm.\r\ngggggg\r\n','image_news/pixel-3a.jpg','2019-05-08 05:40:25',NULL),(4,'test','test 5656656','image_news/193592.jpg','2019-05-15 04:39:39','2019-05-15 04:39:52'),(5,'blabla','<p><em>lmao</em></p>\r\n','image_news/193767.jpg','2019-05-15 04:45:58','2019-05-15 04:45:58');
+INSERT INTO `news` VALUES (1,'Tháng 5, mua điện thoại Samsung Galaxy ưu đãi lớn đến 5.5 triệu','Tháng 5 là tháng của ngày Quốc tế lao động, ngày sinh của cố chủ tịch Hồ Chí Minh và cũng là thời điểm “vàng” để bạn tậu điện thoại Samsung vì hàng loạt sản phẩm của công ty Hàn Quốc đang được giảm giá mạnh, trong đó mức cao nhất lên đến 5.5 triệu đồng, đi kèm theo đó là rất nhiều khuyến mãi hấp dẫn khác.','image_news/galaxys10sale.jpg','2019-05-07 17:07:50',NULL),(2,'Google Pixel 3a lộ cấu hình chi tiết trước ngày ra mắt','Trước thời điểm trình làng tại sự kiện Google I/O 2019 thì cấu hình của Pixel 3a đã được giới thạo tin khai thác khá chi tiết.\r\nTheo Gizmochina, Google Pixel 3a sẽ có màn hình OLED kích thước 5.6 inch HD+, tỉ lệ màn hình 18:9. Màn hình này sẽ hỗ trợ tính năng Always-on Display và Always-listening, với tỉ lệ tương phản 1666677666.000:1.\r\n\r\nCung cấp sức mạnh cho máy là bộ vi xử lý tám Snapdragon 670, đi kèm 4 GB RAM và 64 GB ROM.\r\n\r\nVề phần camera, Pixel 3a sẽ có cảm biến lấy nét Dual Pixel 12.2 MP khẩu độ F/1.8 cho khả năng bắt nét tốt và chống rung quang học (OIS) và điện tử (EIS), cho góc nhìn 76 độ. Được biết, Pixel 3a sẽ có thể quay video chất lượng Full HD ở tốc độ 30, 60 hoặc 120 khung hình/ giây, video độ phân giải HD ở tốc độ 30, 60 hoặc 240 khung hình/giây và video 4K tốc độ 30 khung hình/giây.\r\n\r\nMặt trước của máy là cảm biến 8 MP khẩu độ F/2.0 với góc nhìn 84 độ, hỗ trợ quay video chất lượng Full HD, HD và 480p ở tốc độ 30 khung hình/giây.\r\n\r\nCung cấp sức mạnh cho máy là viên pin dung lượng 3.000 mAh hỗ trợ sạc nhanh công suất 18W, hỗ trợ một khe nano-SIM duy nhất, hỗ trợ eSIM ở một số thị trường, cổng cắm tai nghe 3.5 mm, Wi-Fi băng tần kép, GPS và Bluetooth 5.0, tích hợp loa âm thanh nổi, cảm biến vân tay ở mặt lưng và hỗ trợ tính năng Active Edge.\r\n\r\nNgoài ra, Pixel 3a sẽ cài sẵn hệ điều hành Android Pie 9.0, được hoàn thiện bằng chất liệu nhựa polycarbonate, trọng lượng 147 gram và kích thước 151.3 x 70.1 x 8.2 mm.\r\ngggggg\r\n','image_news/pixel-3a.jpg','2019-05-08 05:40:25',NULL);
 /*!40000 ALTER TABLE `news` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,9 +145,9 @@ CREATE TABLE `users` (
   `user_name` varchar(45) NOT NULL,
   `user_email` varchar(45) NOT NULL,
   `user_password` varchar(255) NOT NULL,
-  `user_role` int(11) DEFAULT NULL,
+  `user_role` int(11) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +156,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'abc','abc@gmail.com','e10adc3949ba59abbe56e057f20f883e',2),(2,'thanh123','thanh123@gmail.com','67184f7e950708e90c47cbca8e01fb39',2);
+INSERT INTO `users` VALUES (1,'abc','abc@gmail.com','e10adc3949ba59abbe56e057f20f883e',2),(2,'thanh','thanh123@gmail.com','67184f7e950708e90c47cbca8e01fb39',2),(5,'lmao',' lmao@gmail.com','202cb962ac59075b964b07152d234b70',2),(15,'admin',' admin@gmail.com','202cb962ac59075b964b07152d234b70',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -168,4 +169,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-02  0:18:38
+-- Dump completed on 2019-06-03 16:37:05

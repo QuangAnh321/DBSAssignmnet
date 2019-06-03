@@ -1,4 +1,5 @@
 <?php require("config/Database.php"); ?>
+<?php require("check_permission.php"); ?>
 <?php
 session_start();
 if (isset($_POST["submit"]) && isset($_FILES['image'])) {
@@ -15,9 +16,9 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
       
  
         if(in_array($file_ext,$extensions)=== false){
-            echo "extension not allowed";
+            $_SESSION['message'] = "extension not allowed";
         } else if ($file_size > 2097152) {
-            echo "File size must be lower than 2 MB";
+            $_SESSION['message'] = "File size must be lower than 2 MB";
         } else {
             $path = "image_news/";
             $localPath = $path.$file_name;
@@ -47,7 +48,7 @@ if (isset($_POST["submit"]) && isset($_FILES['image'])) {
         <form action="add_news.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label>Title:</label>
-                <input type="text" class="form-control" placeholder="News title" name="title">
+                <input type="text" class="form-control" placeholder="News title" name="title" required>
             </div>
             <div class="form-group">
                 <label>Content:</label>
